@@ -1,4 +1,6 @@
 cd $PSScriptRoot
+git stash
+git pull
 npm install
 Start-Process node $PSScriptRoot/app.js -WindowStyle hidden
 [system.Diagnostics.Process]::Start("chrome","http://localhost:8888/login")
