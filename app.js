@@ -2,7 +2,7 @@ var SpotifyWebApi = require('spotify-web-api-node');
 const spotifyWebUtility = require('./spotifyWebUtility/spotifyWebUtility');
 const express = require('express')
 
-// This file is copied from: https://github.com/thelinmichael/spotify-web-api-node/blob/master/examples/tutorial/00-get-access-token.js
+// This file is based on: https://github.com/thelinmichael/spotify-web-api-node/blob/master/examples/tutorial/00-get-access-token.js
 
 const scopes = [
     'ugc-image-upload',
