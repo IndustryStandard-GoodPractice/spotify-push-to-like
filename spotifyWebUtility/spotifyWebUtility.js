@@ -23,7 +23,7 @@ class spotifyWebUtility{
 
     async track(user){
       const track = await spotifyApi.getMyCurrentPlayingTrack(user);
-      console.log("currently listening to " + track.body.item.name + "by: " + track.body.item.album.artists[0].name)
+      console.log("currently listening to " + track.body.item.name + " by: " + track.body.item.album.artists[0].name)
       return track.body.item.id
     }
 
