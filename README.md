@@ -1,7 +1,9 @@
-# spotify-push-to-like
-Have you ever been listening to spotify while gaming or focusing on a separate window. You are listening to your discovery weekly, your daily mix 1-3, or a playlist your friend shared you. Out of nowhere!? a Banger! but you were too focused on your match and dont remember what track is was. With spotify push to like you can circumvent this issue simply by pressing ctrl + L !!!
+# Spotify Push To Like
+Have you ever been listening to spotify while gaming or focusing on a separate window. You are listening to your discovery weekly, your daily mix 1-3, or a playlist your friend shared you. Out of nowhere!? a Banger! but you were too focused on what you were doing and don't remember what track it was. With Spotify Push To Like you can circumvent this issue simply by pressing ctrl + L !!!
 
-## starting the app
+## Starting The App
+
+This mini app requires that you have node js and python installed. it will open two command prompts in the background while you do your thing.
 
 ### Windows 
 run the start-app.ps1 script, this will start the node server in background prompt and automatically direct you to the spotify login handler. a python console will also open and listen for ctrl + L
