@@ -10,4 +10,3 @@ $env:PYTHONIOENCODING = "UTF-8"
 pip install -r $PSScriptRoot/$LISTENER_PATH/requirements.txt --user
 $PYTH_PROC = Start-Process python $PSScriptRoot/$LISTENER_PATH/listener.py -WindowStyle hidden -PassThru
 $PYTH_PROC | Export-Clixml -Path (Join-Path $ENV:temp 'processhandle.xml')
-$PYTH_PROC
