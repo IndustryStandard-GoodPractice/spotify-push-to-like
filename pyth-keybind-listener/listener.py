@@ -1,12 +1,7 @@
-# Imports
-import win32con
-import ctypes, ctypes.wintypes
+from pynput import keyboard
 import requests
 
-#
-# Functions
-#
-def dispatch_hotkey(msg):
+def on_activate():
     print("-> Hotkey detected!!!\n")
     
     try:
@@ -15,21 +10,13 @@ def dispatch_hotkey(msg):
         print('\n** request failed is node server running and have you logged in?')
     print("\n*** Waiting for hotkey message...")
 
-# Register hotkey
-print("\n*** Registering global hotkey for CTRL + L by default")
-if ctypes.windll.user32.RegisterHotKey(None, 1, win32con.MOD_CONTROL, ord('L')) != 0:
+def for_canonical(f):
+    return lambda k: f(l.canonical(k))
 
-    # Wait for hotkey to be triggered
-    print("\n*** Waiting for hotkey message...")
-    try:
-        msg = ctypes.wintypes.MSG()
-        while ctypes.windll.user32.GetMessageA(ctypes.byref(msg), None, 0, 0) != 0:
-            if msg.message == win32con.WM_HOTKEY:
-                dispatch_hotkey(msg)
-            
-            ctypes.windll.user32.TranslateMessage(ctypes.byref(msg))
-            ctypes.windll.user32.DispatchMessageA(ctypes.byref(msg))
-
-    # Unregister hotkey
-    finally:
-        ctypes.windll.user32.UnregisterHotKey(None, 1)
+hotkey = keyboard.HotKey(
+    keyboard.HotKey.parse('<ctrl>+l'),
+    on_activate)
+with keyboard.Listener(
+        on_press=for_canonical(hotkey.press),
+        on_release=for_canonical(hotkey.release)) as l:
+    l.join()
