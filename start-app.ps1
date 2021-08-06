@@ -1,6 +1,7 @@
 npm install
 Start-Process node app.js
-
-pip install -r './pyth-keybind-listener/requirements.txt'
-Start-Process python './pyth-keybind-listener/listener.py'
 [system.Diagnostics.Process]::Start("chrome","http://localhost:8888/login")
+
+$LISTENER_PATH = './pyth-keybind-listener'
+pip install -r $LISTENER_PATH/requirements.txt
+Start-Process python $LISTENER_PATH/listener.py

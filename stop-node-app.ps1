@@ -1,4 +1,4 @@
-$node_app = Get-Process -Id (Get-NetTCPConnection -LocalPort 8888).OwningProcess
-$node_id = $node_app.Id
+$NODE_APP = Get-Process -Id (Get-NetTCPConnection -LocalPort 8888).OwningProcess
+$NODE_ID = $NODE_APP.Id
 
-Stop-Process -Id $node_id
+Stop-Process -Id $NODE_ID
