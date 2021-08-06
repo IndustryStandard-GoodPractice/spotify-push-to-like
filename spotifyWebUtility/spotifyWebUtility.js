@@ -23,13 +23,21 @@ class spotifyWebUtility{
 
     async track(user){
       const track = await spotifyApi.getMyCurrentPlayingTrack(user);
-      console.log(track.body.item.id)
+      console.log("currently listening to " + track.body.item.name + "by: " + track.body.item.album.artists[0].name)
       return track.body.item.id
     }
 
     async like(id){
+      const isLiked = await spotifyApi.containsMySavedTracks([id])
+      if(isLiked.body[0]){
+        await spotifyApi.removeFromMySavedTracks([id])
+        console.log("track is already liked... removing it")
+        console.log("removed track from liked with id: " + id)
+        return
+      }
       const response = await spotifyApi.addToMySavedTracks([id])
-        console.log("response status: " + response.statusCode)
+      console.log("added track to liked with id: " + id)
+      console.log("response status: " + response.statusCode)
     }
 
     likeCurrentTrack() {
