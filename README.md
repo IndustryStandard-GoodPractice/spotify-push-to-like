@@ -14,6 +14,12 @@ if you see execution-policy errors run the following powershell command and then
 set-executionpolicy remotesigned
 ```
 
+also feel free to add the startup.cmd file to your windows startup folder located at
+```
+C:\Users\[your-user]\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+```
+remember to replace the file path to this application in teh startup.cmd file
+
 ### Non-Windows
 run the following commands to start the node server and follow the url printed in the console.
 ```

@@ -1,0 +1,1 @@
+PowerShell C:\your\path\to\the\app\start-app.ps1 >> "%TEMP%\StartupLog.txt" 2>&1
