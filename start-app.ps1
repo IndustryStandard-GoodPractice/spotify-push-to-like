@@ -1,5 +1,4 @@
 cd $PSScriptRoot
-git stash
 git pull
 npm install
 Start-Process node $PSScriptRoot/app.js -WindowStyle hidden
