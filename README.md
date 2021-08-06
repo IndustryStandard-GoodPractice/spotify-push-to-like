@@ -8,6 +8,12 @@ This mini app requires that you have node js and python installed. it will open 
 ### Windows 
 run the start-app.ps1 script, this will start the node server in background prompt and automatically direct you to the spotify login handler. a python console will also open and listen for ctrl + L
 
+if you see execution-policy errors run the following powershell command and then rerun the start-app script
+
+```
+set-executionpolicy remotesigned
+```
+
 ### Non-Windows
 run the following commands to start the node server and follow the url printed in the console.
 ```
