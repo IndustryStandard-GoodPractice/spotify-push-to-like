@@ -1,4 +1,5 @@
 # spotify-push-to-like
+Have you ever been listening to spotify while gaming or focusing on a separate window. You are listening to your discovery weekly, your daily mix 1-3, or a playlist your friend shared you. Out of nowhere!? a Banger! but you were too focused on your match and dont remember what track is was. With spotify push to like you can circumvent this issue simply by pressing ctrl + L !!!
 
 ## starting the app
 
