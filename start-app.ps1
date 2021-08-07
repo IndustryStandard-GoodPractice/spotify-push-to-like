@@ -2,6 +2,9 @@ $WINDOW_STYLE = 'hidden'
 
 cd $PSScriptRoot
 
+#run stop script to close any hidden services before starting new instance
+./stop-node-app.ps1
+
 # Override default windowstyle options are: hidden, minimized, maximized
 if($args[0] -ne $null){
     $WINDOW_STYLE = $args[0]
