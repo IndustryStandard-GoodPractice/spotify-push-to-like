@@ -13,7 +13,6 @@ if($args[0] -ne $null){
 # Start Node Application
 npm install
 Start-Process node $PSScriptRoot/app.js -WindowStyle $WINDOW_STYLE
-[system.Diagnostics.Process]::Start("chrome","http://localhost:8888/login")
 
 # Launch Python listener
 $LISTENER_PATH = './pyth-keybind-listener'
@@ -21,3 +20,5 @@ $env:PYTHONIOENCODING = "UTF-8"
 pip install -r $PSScriptRoot/$LISTENER_PATH/requirements.txt --user
 $PYTH_PROC = Start-Process python $PSScriptRoot/$LISTENER_PATH/listener.py -PassThru -WindowStyle $WINDOW_STYLE
 $PYTH_PROC | Export-Clixml -Path (Join-Path $ENV:temp 'processhandle.xml')
+
+start-process "http://localhost:8888/login"
